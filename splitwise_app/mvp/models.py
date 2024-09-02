@@ -46,7 +46,7 @@ class Expense(TimestampModel):
 
 class ExpenseLine(TimestampModel):
     expense_line_id = models.IntegerField(primary_key=True, auto_created=True, db_column="expense_line_id")
-    expense = models.ForeignKey(to=Expense, on_delete=models.CASCADE, db_column="activity_id")
+    expense = models.ForeignKey(to=Expense, on_delete=models.CASCADE, db_column="expense_id")
     user = models.ForeignKey(to=User, on_delete=models.CASCADE, db_column="user_id")
     status = models.CharField(choices=ExpenseStatus.EXPENSE_STATUS_CHOICE)
 
